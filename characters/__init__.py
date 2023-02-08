@@ -18,9 +18,4 @@ def get_characters_view(db: Session = Depends(get_db)):
 def get_characters_view(character_id: int, db: Session = Depends(get_db)):
     return get_character(db, character_id)
 
-@app.get("/books")
-def get_books():
-    # code to return some books
-    return {"message": "books"}
-
 from characters.character import *
