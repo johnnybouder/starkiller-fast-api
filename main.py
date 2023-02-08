@@ -24,18 +24,19 @@ def get_db():
 class DBCharacter(Base):
     __tablename__ = 'characters'
 
-    Id = Column(Integer, primary_key=True, index=True)
-    Name = Column(String, nullable=True)
-    Allegiance = Column(String, nullable=True)
-    LightSaber = Column(String, nullable=True)
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, nullable=True)
+    allegiance = Column(String, nullable=True)
+    lightSaber = Column(String, nullable=True)
 
 Base.metadata.create_all(bind=engine)
 
 # A Pydantic Character
 class Character(BaseModel):
-    Name: Optional[str] = None
-    Allegiance: Optional[str] = None
-    LightSaber: Optional[str] = None
+    id: int
+    name: Optional[str] = None
+    allegiance: Optional[str] = None
+    lightSaber: Optional[str] = None
 
     class Config:
         orm_mode = True

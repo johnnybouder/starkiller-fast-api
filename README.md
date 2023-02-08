@@ -6,5 +6,5 @@ The goal of this project is to provide a python-based backend for Project Starki
 
 ```
 # Start the server
-uvicorn main:app --reload --host=localhost --port=5010
+uvicorn main:app --reload --host=0.0.0.0 --port=5010
 ```
